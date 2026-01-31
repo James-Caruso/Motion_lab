@@ -4,6 +4,7 @@ import com.revrobotics.spark.SparkAbsoluteEncoder;
 import com.revrobotics.spark.SparkFlex;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 import edu.wpi.first.math.controller.PIDController;
+import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Flywheel extends SubsystemBase {
@@ -17,7 +18,9 @@ public class Flywheel extends SubsystemBase {
 
         controller.setTolerance(0.025);
     }
-
+    public Command turnFlywheel(){
+        return runEnd(() -> motor.set(0.1), () -> motor.set(0)).withName("turnFlywheel");
+    }
     // public void driveAngleTo(double setpoint) {
     //     motor.set(-MathUtil.clamp(angLimiter.calculate(controller.calculate(encoder.getPosition(), setpoint)), -1, 1));
     // }

@@ -89,7 +89,9 @@ public class Constants {
 		public static final double MaxSpeed = 1.00;//percent
         
     }
-
+    public interface Flywheel{
+        public static final int MotorID = 1;
+    }
     public interface Climber{
         public static final int MotorID = 19;
         
@@ -165,5 +167,3 @@ public class Constants {
     }
 
 }
-
-
